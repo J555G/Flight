@@ -43,14 +43,20 @@
 </div>
 <div id="loading" class="loading">loading terrain…</div>
 
+<button id="modeBtn" class="modeBtn">🗺 Map</button>
 <button id="menuBtn" class="menuBtn" aria-label="Menu">☰</button>
+<div class="mapHint">Drag to move · pinch to zoom · twist to rotate · two fingers up/down to tilt</div>
 <div id="menu" class="menu">
   <div class="row head"><b>Flight</b><button id="closeMenu" aria-label="Close">✕</button></div>
   <div class="row"><span>Quality</span>
     <div class="seg"><button data-q="low">Low</button><button data-q="medium">Medium</button><button data-q="high">High</button></div>
   </div>
+  <div class="row"><span>Field of view <b id="fovVal">60°</b></span>
+    <input type="range" id="fov" min="30" max="110" step="1" value="60">
+  </div>
   <label class="row"><span>Invert pitch</span><input type="checkbox" id="invertPitch"></label>
   <div class="row btns">
+    <button id="lookBtn">Look straight ahead</button>
     <button id="gotoBtn">Fly to coordinates…</button>
     <button id="homeBtn">Back to start</button>
     <button id="fsBtn">Fullscreen</button>
@@ -58,12 +64,15 @@
   <p class="help">
     <b>Left stick:</b> forward / back and slide sideways. Let go to hover.<br>
     <b>Right stick:</b> pull back = nose up, push = nose down; left / right = banked turn.<br>
+    <b>Drag elsewhere:</b> look around; the view stays where you leave it. Double-tap to look ahead again.<br>
+    <b>🗺 Map:</b> leave flight mode to find a new spot with the usual map gestures, then tap <b>✈ Fly</b>.<br>
     Speed grows with height. Keyboard: WASD + arrow keys.<br>
     Tip: in Safari use Share → Add to Home Screen to fly full-screen.
   </p>
   <p class="credits">
     Imagery: Esri, Maxar, Earthstar Geographics, and the GIS User Community ·
     Terrain: <a href="https://mapterhorn.com/attribution" target="_blank" rel="noopener">© Mapterhorn</a> ·
+    Sky: Michelangelo, Sistine Chapel ceiling (photo via Wikimedia Commons, <a href="https://commons.wikimedia.org/wiki/File:CAPPELLA_SISTINA_Ceiling.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a>) and The Last Judgement (public domain) ·
     Rendering: three.js
   </p>
 </div>

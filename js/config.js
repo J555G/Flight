@@ -15,7 +15,12 @@ export const QUALITY = {
 };
 
 // Start above Zermatt, looking towards the Matterhorn.
-export const START = { lat: 46.035, lon: 7.70, alt: 3800, heading: 215, pitch: -6 };
+export const START = { lat: 46.035, lon: 7.70, alt: 3800, heading: 215, pitch: 0 };
+
+// Sky: Michelangelo, Sistine Chapel (Wikimedia Commons).
+// Ceiling: "CAPPELLA SISTINA Ceiling.jpg" (CC BY-SA 3.0); Last Judgement: public domain.
+export const SKY_CEILING_URL = 'https://upload.wikimedia.org/wikipedia/commons/0/07/CAPPELLA_SISTINA_Ceiling.jpg';
+export const SKY_WALL_URL = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Last_Judgement_%28Michelangelo%29.jpg/1920px-Last_Judgement_%28Michelangelo%29.jpg';
 
 export function fillUrl(tpl, z, x, y) {
   return tpl.replace('{z}', z).replace('{x}', x).replace('{y}', y);

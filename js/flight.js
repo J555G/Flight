@@ -31,6 +31,17 @@ export class Flight {
 
   get agl() { return this.alt - this.ground; }
 
+  // Place the craft at a world position with the given heading/pitch, hovering level.
+  setPose(p, heading, pitch) {
+    this.pos[0] = p[0]; this.pos[1] = p[1]; this.pos[2] = p[2];
+    this.lon = wrapLon(Math.atan2(p[1], p[0]));
+    this.lat = Math.atan2(p[2], Math.hypot(p[0], p[1]));
+    this.alt = Math.hypot(p[0], p[1], p[2]) - R;
+    this.heading = heading;
+    this.pitch = Math.max(-MAX_PITCH, Math.min(MAX_PITCH, pitch));
+    this.bank = 0; this.vf = 0; this.vs = 0;
+  }
+
   // Top speed grows with height so the whole planet stays explorable.
   maxSpeed() {
     return Math.min(40 + Math.max(this.agl, 0) * 0.4, 300000);
