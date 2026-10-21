@@ -4,7 +4,7 @@
 // Right stick: up/down = pitch, left/right = bank with coordinated yaw.
 // Release the left stick and the craft smoothly comes to a hover in place.
 
-import { R, D2R, ecef, enu, wrapLon } from './geo.js';
+import { R, D2R, ecef, enu, wrapLon } from './geo.js?v=20261021205936';
 
 const MAX_BANK = 50 * D2R;
 const MAX_PITCH = 85 * D2R;

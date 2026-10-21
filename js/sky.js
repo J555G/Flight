@@ -4,7 +4,7 @@
 // so the ceiling always stays overhead wherever you fly.
 
 import * as THREE from 'three';
-import { SKY_CEILING_URL, SKY_WALL_URL } from './config.js';
+import { SKY_CEILING_URL, SKY_WALL_URL } from './config.js?v=20261021205936';
 
 // Room geometry in units of the ceiling height (ceiling plane at z = 1).
 const CEIL_A = 1.35;                 // half length (east-west)

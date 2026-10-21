@@ -1,7 +1,7 @@
 // Camera pose helpers shared by flight mode and map mode.
 // A "view" is a world position plus forward/right/up unit vectors (Earth-centred frame).
 
-import { R, enu } from './geo.js';
+import { R, enu } from './geo.js?v=20261021205936';
 
 export const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
 export const cross = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];

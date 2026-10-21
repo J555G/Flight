@@ -1,5 +1,5 @@
 // Module worker: fetches and decodes terrain tiles off the main thread.
-import { fetchTerrarium } from './terrarium.js';
+import { fetchTerrarium } from './terrarium.js?v=20261021205936';
 
 self.onmessage = async (e) => {
   const { id, url } = e.data;

@@ -33,3 +33,5 @@ Sources and tuning live in `js/config.js`.
 - `js/terrarium.js`, `js/terrain-worker.js` – elevation decoding off the main thread
 
 Run locally with any static server, e.g. `python -m http.server`, then open http://localhost:8000.
+
+Before committing changes, run `python3 tools/bump-version.py`: it stamps a new version on all script and style links, so browsers never mix old cached files with new ones.

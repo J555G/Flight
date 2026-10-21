@@ -4,12 +4,12 @@
 // camera ("relative to eye"), so float precision stays good anywhere on Earth.
 
 import * as THREE from 'three';
-import { R, tile2lon, tile2lat, ecef, lonLatToTile } from './geo.js';
-import { TN, fetchTerrarium } from './terrarium.js';
+import { R, tile2lon, tile2lat, ecef, lonLatToTile } from './geo.js?v=20261021205936';
+import { TN, fetchTerrarium } from './terrarium.js?v=20261021205936';
 import {
   IMAGERY_URL, IMAGERY_MAX_Z, TERRAIN_URL,
   TERRAIN_BASE_MAX_Z, TERRAIN_TRY_MAX_Z, fillUrl,
-} from './config.js';
+} from './config.js?v=20261021205936';
 
 const SEG = 32;          // mesh segments per tile side
 const ROOT_Z = 2;
@@ -84,7 +84,7 @@ class TerrainCache {
     this.worker = null;
     if (typeof Worker !== 'undefined' && typeof OffscreenCanvas !== 'undefined') {
       try {
-        this.worker = new Worker(new URL('./terrain-worker.js', import.meta.url), { type: 'module' });
+        this.worker = new Worker(new URL('./terrain-worker.js?v=20261021205936', import.meta.url), { type: 'module' });
         this.worker.onmessage = (e) => {
           const cb = this.pending.get(e.data.id);
           this.pending.delete(e.data.id);

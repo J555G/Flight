@@ -5,8 +5,8 @@
 //              two fingers moving up/down together tilt. Double tap zooms in.
 //              Mouse: drag = pan, wheel = zoom, right-drag = rotate / tilt.
 
-import { R } from './geo.js';
-import { dot, cross, norm, add, scale, rotate, headingPitch, screenRay, hitSphere } from './view.js';
+import { R } from './geo.js?v=20261021205936';
+import { dot, cross, norm, add, scale, rotate, headingPitch, screenRay, hitSphere } from './view.js?v=20261021205936';
 
 export class Gestures {
   // app: { mode(), view(), vfov(), groundAt(pos), look(dYaw, dPitch), resetLook(), setMapView(pos, fwd) }

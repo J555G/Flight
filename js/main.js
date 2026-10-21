@@ -1,12 +1,12 @@
 import * as THREE from 'three';
-import { R, D2R, R2D, enu } from './geo.js';
-import { TileManager } from './tiles.js';
-import { Flight } from './flight.js';
-import { Controls } from './controls.js';
-import { Gestures } from './gestures.js';
-import { Sky } from './sky.js';
-import { cross, norm, headingPitch, rotate } from './view.js';
-import { QUALITY, START } from './config.js';
+import { R, D2R, R2D, enu } from './geo.js?v=20261021205936';
+import { TileManager } from './tiles.js?v=20261021205936';
+import { Flight } from './flight.js?v=20261021205936';
+import { Controls } from './controls.js?v=20261021205936';
+import { Gestures } from './gestures.js?v=20261021205936';
+import { Sky } from './sky.js?v=20261021205936';
+import { cross, norm, headingPitch, rotate } from './view.js?v=20261021205936';
+import { QUALITY, START } from './config.js?v=20261021205936';
 
 // ---------- settings (remembered per device) ----------
 const store = {
