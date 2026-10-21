@@ -144,6 +144,7 @@ function frame(now) {
   updateCamera();
   tiles.update(flight.pos, camera);
   renderer.render(scene, camera);
+  window.__flightStarted = true;
 
   hudTimer += dt;
   if (hudTimer > 0.1) { hudTimer = 0; updateHud(); saveHash(now); }

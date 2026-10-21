@@ -12,6 +12,21 @@
 <link rel="apple-touch-icon" href="icon.svg">
 <title>Flight</title>
 <link rel="stylesheet" href="style.css">
+<script>
+// Show start-up problems on screen (no developer console on iPad).
+(function () {
+  function show(msg) {
+    var d = document.getElementById('err');
+    if (!d) { d = document.createElement('pre'); d.id = 'err'; document.documentElement.appendChild(d); }
+    d.textContent += msg + '\n';
+  }
+  window.__flightError = show;
+  addEventListener('error', function (e) { show('Error: ' + (e.message || e) + (e.filename ? ' (' + e.filename.split('/').pop() + ':' + e.lineno + ')' : '')); });
+  addEventListener('unhandledrejection', function (e) { show('Error: ' + (e.reason && (e.reason.stack || e.reason.message) || e.reason)); });
+  if (HTMLScriptElement.supports && !HTMLScriptElement.supports('importmap')) show('This browser is too old (no import maps). Please update iPadOS / Safari.');
+  setTimeout(function () { if (!window.__flightStarted) show('The flight engine did not start. Check the internet connection and reload.'); }, 12000);
+})();
+</script>
 <script type="importmap">
 { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
 </script>
