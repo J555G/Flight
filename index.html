@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Flight">
+<meta name="theme-color" content="#0b1420">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon.svg">
+<title>Flight</title>
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
+</script>
+</head>
+<body>
+<canvas id="view"></canvas>
+
+<div class="hud">
+  <div class="cell"><span>ALT</span><b id="hAlt">–</b></div>
+  <div class="cell"><span>AGL</span><b id="hAgl">–</b></div>
+  <div class="cell"><span>SPD</span><b id="hSpd">–</b></div>
+  <div class="cell"><span>HDG</span><b id="hHdg">–</b></div>
+  <div class="cell pos"><b id="hPos">–</b></div>
+</div>
+<div id="loading" class="loading">loading terrain…</div>
+
+<button id="menuBtn" class="menuBtn" aria-label="Menu">☰</button>
+<div id="menu" class="menu">
+  <div class="row head"><b>Flight</b><button id="closeMenu" aria-label="Close">✕</button></div>
+  <div class="row"><span>Quality</span>
+    <div class="seg"><button data-q="low">Low</button><button data-q="medium">Medium</button><button data-q="high">High</button></div>
+  </div>
+  <label class="row"><span>Invert pitch</span><input type="checkbox" id="invertPitch"></label>
+  <div class="row btns">
+    <button id="gotoBtn">Fly to coordinates…</button>
+    <button id="homeBtn">Back to start</button>
+    <button id="fsBtn">Fullscreen</button>
+  </div>
+  <p class="help">
+    <b>Left stick:</b> forward / back and slide sideways. Let go to hover.<br>
+    <b>Right stick:</b> pull back = nose up, push = nose down; left / right = banked turn.<br>
+    Speed grows with height. Keyboard: WASD + arrow keys.<br>
+    Tip: in Safari use Share → Add to Home Screen to fly full-screen.
+  </p>
+  <p class="credits">
+    Imagery: Esri, Maxar, Earthstar Geographics, and the GIS User Community ·
+    Terrain: <a href="https://mapterhorn.com/attribution" target="_blank" rel="noopener">© Mapterhorn</a> ·
+    Rendering: three.js
+  </p>
+</div>
+
+<div id="stickL" class="stick left"><div class="knob"></div><span class="lbl">MOVE</span></div>
+<div id="stickR" class="stick right"><div class="knob"></div><span class="lbl">PITCH · TURN</span></div>
+
+<div class="attrib">Imagery © Esri, Maxar, Earthstar Geographics · Terrain © Mapterhorn</div>
+
+<noscript>This flight explorer needs JavaScript.</noscript>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
